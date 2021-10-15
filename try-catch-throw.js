@@ -19,3 +19,13 @@ try {
 } catch (err) {
   //console.log(err)
 }
+
+/* ****** */
+
+try {
+  //É executado quando não há erros
+} catch (err) {
+  // é executado quando há erros
+} finally {
+  // sempre
+}
