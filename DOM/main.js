@@ -63,3 +63,26 @@ element4.classList.add('active') //adicionar - active nome da classe seletor de 
 element4.classList.remove('active') //remove
 
 element4.classList.toggle('active') //se a classe existir ele remove se não exister add a classe
+
+//navegando pelos elementos
+//parentElement e parentNode - pai
+
+const body = document.querySelector('body')
+
+body.parentNode // pais da tag
+body.parentElement //pais da tag
+
+//filhos da tag
+
+const el = document.querySelector('body')
+
+el.childNodes //leva em conta os espaços vazios
+el.children // não leva em conta os espaços vazios
+
+el.firstElementChild //ultimo filho
+el.lastElementChild //ultimo filho
+
+//irmão da tag
+
+el.nextSibling //pega o proximo irmão
+el.previousElementSibling
