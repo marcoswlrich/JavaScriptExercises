@@ -26,4 +26,22 @@ console.log(
   }`
 )
 // const fatura2 = 40
+const fatura2 = 40
+const gorjeta2 =
+  fatura2 <= 300 && fatura2 >= 50 ? fatura2 * 0.15 : fatura2 * 0.2
+console.log(
+  `A conta foi ${fatura2}, a gorjeta foi de ${gorjeta2} e valor total é ${
+    fatura2 + gorjeta2
+  }`
+)
+
 // const fatura3 = 430
+
+const fatura3 = 430
+const gorjeta2 =
+  fatura3 <= 300 && fatura3 >= 50 ? fatura3 * 0.15 : fatura3 * 0.2
+console.log(
+  `A conta foi ${fatura3}, a gorjeta foi de ${gorjeta2} e valor total é ${
+    fatura3 + gorjeta2
+  }`
+)
