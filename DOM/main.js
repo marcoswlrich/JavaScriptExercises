@@ -110,3 +110,36 @@ body.insertBefore(div, script) // o segundo é o nó de ultimo elemento para fic
 const body = document.querySelector('body')
 const header = body.querySelector('header')
 body.insertBefore(div, header.nextElementSibling)
+
+//Eventos -- add on nas tag escolhida aparece várias opções de eventos
+// ex. <h1 onclick="print()"> Olá </h1>
+
+function print() {
+  console.log('print')
+}
+
+//Eventos teclado
+
+const input = document.querySelector('input')
+
+input.onkeydown = function () {
+  //existem vários tipos também
+  console.log('rodei')
+}
+
+//adicionando eventos via JS
+
+const h1 = document.querySelector('h1')
+
+h1.addEventListener('click', print) // usando a função print add acima como exemplo.
+
+// outro modo de add eventos - não é mais recomendada de tiver mais de um evento no mesmo elemento
+//ele so considera a última. mais usado é a de cima.
+
+h1.onclick = print // função de cima
+
+//argumento event
+
+input.onkeydown = function (event) {
+  console.log(event.key)
+}
