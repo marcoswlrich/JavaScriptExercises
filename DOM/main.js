@@ -86,3 +86,27 @@ el.lastElementChild //ultimo filho
 
 el.nextSibling //pega o proximo irmão
 el.previousElementSibling
+
+//Criando e adicionando elementos
+
+//creatElement
+
+const div = document.createElement('div')
+div.innerText = 'Olá Devs'
+
+//append prepend
+
+const body = document.querySelector('body')
+
+body.append(div)
+
+//insertBefore
+
+const body = document.querySelector('body')
+const script = body.querySelector('script')
+body.insertBefore(div, script) // o segundo é o nó de ultimo elemento para ficar antes dele.
+
+//insertafter -  depois de uma tag
+const body = document.querySelector('body')
+const header = body.querySelector('header')
+body.insertBefore(div, header.nextElementSibling)
