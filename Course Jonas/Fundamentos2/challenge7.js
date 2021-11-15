@@ -14,3 +14,42 @@
 
 // Dados de teste: Marks pesa 78 kg e tem 1,69 m de altura. John pesa 92 kg e tem 1,95 m
 // alta.
+
+const mark = {
+  firstName: 'Mark',
+  lastName: 'Miller',
+  massa: 78,
+  altura: 1.69,
+  calcIMC: function () {
+    this.imc = this.massa / this.altura ** 2
+    return this.imc
+  }
+}
+
+const john = {
+  firstName: 'John',
+  lastName: 'Smith',
+  massa: 92,
+  altura: 1.95,
+  calcIMC: function () {
+    this.imc = this.massa / this.altura ** 2
+    return this.imc
+  }
+}
+
+mark.calcIMC()
+john.calcIMC()
+console.log(mark.imc)
+console.log(john.imc)
+
+//console
+
+if (mark.imc > john.imc) {
+  console.log(
+    `O IMC de ${mark.firstName} (${mark.imc}) é maior do que o de ${john.firstName} (${john.imc})!`
+  )
+} else if (john.imc > mark.imc) {
+  console.log(
+    `O IMC de ${john.firstName} (${john.imc}) é maior do que o de ${mark.firstName} (${mark.imc})!`
+  )
+}
