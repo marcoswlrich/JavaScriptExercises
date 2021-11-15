@@ -20,3 +20,23 @@
 // realmente é o valor retornado de uma função! Então você pode simplesmente chamar uma função como array
 // valores (portanto, não armazene os valores de ponta em variáveis ​​separadas primeiro, mas diretamente no novo
 // array)
+
+const calcGorjeta = function (conta) {
+  return conta >= 50 && conta <= 300 ? conta * 0.15 : conta * 0.2
+}
+
+const contas = [125, 555, 44]
+const gorjetas = [
+  calcGorjeta(contas[0]),
+  calcGorjeta(contas[1]),
+  calcGorjeta(contas[2])
+]
+const total = [
+  contas[0] + gorjetas[0],
+  contas[1] + gorjetas[1],
+  contas[2] + gorjetas[2]
+]
+
+console.log('Conta:', contas, 'Gorjetas:', gorjetas, 'Total:', total)
+
+// bonus
