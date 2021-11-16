@@ -26,3 +26,31 @@
 //       4.2. Para calcular a média, divida a soma que você calculou antes pelo
 //       comprimento da matriz (porque esse é o número de elementos)
 //       4.3. Chame a função com a matriz 'totais'
+
+const calcGorjeta = function (conta) {
+  return conta >= 50 && conta <= 300 ? conta * 0.15 : conta * 0.2
+}
+
+const contas = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+
+const gorjetas = []
+const total = []
+
+for (let i = 0; i < contas.length; i++) {
+  const gorjeta = calcGorjeta(contas[i])
+  gorjetas.push(gorjeta)
+  total.push(gorjeta + contas[i])
+}
+
+console.log(contas, gorjetas, total)
+
+const calcMedia = function (array) {
+  let soma = 0
+  for (let i = 0; i < array.length; i++) {
+    soma += array[i]
+  }
+  return soma / array.length
+}
+
+console.log(calcMedia(total))
+console.log(calcMedia(gorjetas))
