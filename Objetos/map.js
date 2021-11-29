@@ -16,11 +16,13 @@ for (const pessoa of pessoas) {
   novasPessoas.set(id, { ...pessoa })
 }
 //chaves
-for (const pessoas of novasPessoas.keys) {
+for (const pessoas of novasPessoas.keys()) {
   console.log(pessoas)
 }
 
 //valores
-for (const pessoas of novasPessoas.values) {
+for (const pessoas of novasPessoas.values()) {
   console.log(pessoas)
 }
+
+//
