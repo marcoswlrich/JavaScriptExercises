@@ -24,7 +24,16 @@ const promises = [
   'Outro Valor'
 ]
 
-Promise.all(promises)
+// Promise.all(promises)
+//   .then(function (valor) {
+//     console.log(valor)
+//   })
+//   .catch(function (err) {
+//     console.log(err)
+//   })
+
+//entrega o valor mais rápido resolvido
+Promise.race(promises)
   .then(function (valor) {
     console.log(valor)
   })
