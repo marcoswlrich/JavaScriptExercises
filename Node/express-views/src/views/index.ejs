@@ -8,14 +8,13 @@
   </head>
   <body>
     <section class="container">
-      <h1>Lorem ipsum dolor sit amet.</h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
-        doloremque magni cumque ullam quam dolor, unde aspernatur molestias
-        temporibus pariatur nam eligendi aliquid vitae omnis eaque tempore
-        dicta. Libero, aspernatur.
-      </p>
-      <p></p>
+      <h1>Formulário</h1>
+      <form action="/" method="post">
+        <input type="hidden" name="_csrf" value="<%= csrfToken  %>" />
+        <label>Cliente</label>
+        <input type="text" name="cliente" />
+        <button>Submit</button>
+      </form>
     </section>
 
     <script src="./assets/js/bundle.js"></script>

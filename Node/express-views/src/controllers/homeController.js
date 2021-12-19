@@ -3,5 +3,6 @@ exports.home = (req, res) => {
 }
 
 exports.trataPost = (req, res) => {
-  res.send('Olá, sou sua nova rota')
+  res.send(req.body)
+  return
 }

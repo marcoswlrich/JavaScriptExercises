@@ -18,9 +18,16 @@ const flash = require('connect-flash')
 
 const routes = require('./routes')
 const path = require('path')
-const middlewares = require('./src/middlewares/middleware')
+const helmet = require('helmet')
+const csrf = require('csurf')
+const {
+  middlewareGlobal,
+  checkCsrfError,
+  csrfMiddleware
+} = require('./src/middlewares/middleware')
 //  /profiles/1234?caampanha=googleads&nome_campanha=seila
 
+app.use(helmet())
 app.use(
   express.urlencoded({
     extended: true
@@ -44,7 +51,10 @@ app.use(flash())
 app.set('views', path.resolve(__dirname, 'src', 'views'))
 app.set('view engine', 'ejs')
 
-app.use(middlewares)
+app.use(csrf())
+app.use(middlewareGlobal)
+app.use(checkCsrfError)
+app.use(csrfMiddleware)
 app.use(routes)
 
 app.on('OK', () => {
