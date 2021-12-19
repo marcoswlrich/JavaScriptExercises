@@ -1,5 +1,4 @@
 require('dotenv').config()
-
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
@@ -10,12 +9,9 @@ mongoose
     app.emit('OK')
   })
   .catch(err => console.log(err))
-
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
-
 const flash = require('connect-flash')
-
 const routes = require('./routes')
 const path = require('path')
 const helmet = require('helmet')
@@ -28,11 +24,13 @@ const {
 //  /profiles/1234?caampanha=googleads&nome_campanha=seila
 
 app.use(helmet())
+
 app.use(
   express.urlencoded({
     extended: true
   })
 )
+app.use(express.json())
 app.use(express.static(path.resolve(__dirname, 'public')))
 
 const sessionOptions = session({
@@ -52,6 +50,7 @@ app.set('views', path.resolve(__dirname, 'src', 'views'))
 app.set('view engine', 'ejs')
 
 app.use(csrf())
+//Nossos próprios middlewares
 app.use(middlewareGlobal)
 app.use(checkCsrfError)
 app.use(csrfMiddleware)
